@@ -1,17 +1,12 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 
-const Login = ()=> {
-  return(<h2>Login</h2>)
-}
+import Login from './components/Login';
+import FriendsList from './components/FriendsList';
+import AddFriend from './components/AddFriend';
 
-const FriendsList = ()=> {
-  return(<h2>FriendsList</h2>)
-}
-const AddFriend = ()=> {
-  return(<h2>FriendsList</h2>)
-}
+
 
 function App() {
   return (
@@ -29,7 +24,7 @@ function App() {
       <Route exact path = "/friends/add">
         <AddFriend />
       </Route>
-      <h2>Client Auth Projects</h2>
+       
     </div>
     </Router>
   );
