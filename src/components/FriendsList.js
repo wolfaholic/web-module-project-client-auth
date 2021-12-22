@@ -6,11 +6,11 @@ const FriendsList = ()=> {
     const [ friends, setFriends ] = useState([]);
 
     useEffect(() => {
-        const cred = localStorage.getItem('creds');
-
-    axios.get('http://localhost:3000/api/friends', {
+        const token = localStorage.getItem('token');
+         
+    axios.get('http://localhost:9000/api/friends', {
         headers: {
-            authorization: cred
+            authorization: token
         }
         })
         .then(resp=> {
@@ -28,7 +28,7 @@ const FriendsList = ()=> {
         <ul>
             {
                 friends.map(friend=> {
-                    return <li>{friend.data.name}{friend.data.age}{friend.data.email}</li>
+                    return <li>{friend.name} - {friend.age} - {friend.email}</li>
                 })
             }
         </ul>
